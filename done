@@ -1,0 +1,44 @@
+class Guest:
+    def __init__(self, name):
+        self.name = name
+
+    def get_name(self):
+        return self.name
+
+
+class Person(Guest):
+    def __init__(self, name, living_place, status):
+        super().__init__(name)
+        self.living_place = living_place
+        self.status = status
+
+    def get_living_place(self):
+        return self.living_place
+
+    def get_status(self):
+        return self.status
+
+
+people =[
+    {
+        "name": "Максим",
+        "living_place": "Москва",
+        "status": "Наставник"
+    },
+    {
+        "name": "Владимир",
+        "living_place": "Киев",
+        "status": "Програмист"
+    },
+    {
+        "name": "Роман",
+        "living_place": "Рига",
+        "status": "Волонтёр"
+    },
+]
+print("Список приглашенных гостей")
+print("-----------------------------")
+for curr_pers in people:
+    pers = Person(name = curr_pers.get("name"),living_place = curr_pers.get("living_place"), status = curr_pers.get("status"))
+    print("«"+pers.name+", г. "+ pers.living_place +", статус: "+ pers.status+"»")
+    print("-----------------------------")
